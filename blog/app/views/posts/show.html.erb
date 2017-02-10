@@ -19,7 +19,7 @@
 	<br>
 	<%= comment.content %>
 	<br>
-	<% if @current_user && @current_user.id == comment.usuer_id %>
+	<% if @current_user && @current_user.id == comment.user_id %>
 		<button><%= link_to 'Edit Comment', edit_comment_path(comment.id) %></button>
 	<% end %>
 	
