@@ -7,19 +7,20 @@
 <hr>
 
 <% if @current_user %>
-	<%= link_to 'Create Comment', new_comment_path(id: @post.id)  %>
+	<button><%= link_to 'Create Comment', new_comment_path(id: @post.id)  %></button>
 	<hr>
 <% end %>
 
 
 <% @comments.each do |comment|  %>
+	<hr>
 	<%= comment.user.first_name %>
 	<%= comment.user.last_name %>
 	<br>
 	<%= comment.content %>
 	<br>
 	<% if @current_user && @current_user.id == comment.usuer_id %>
-		<%= link_to 'Edit Comment', edit_comment_path(comment.id) %>
+		<button><%= link_to 'Edit Comment', edit_comment_path(comment.id) %></button>
 	<% end %>
 	
 	<hr>

@@ -2,17 +2,21 @@
 
 <% if @posts %>
 	<% @posts.each do |post|  %>
+		<div>
+		<hr>
 		<% if @current_user %>
 			<%= link_to post.user.first_name + " " + post.user.last_name, post.user%>
 		<% else %>
-			<%= link_to post.user.first_name + " " + post.user.last_name, sessions_new_path%>
+			<button><%= link_to post.user.first_name + " " + post.user.last_name, sessions_new_path%></button>
 		<% end %>
 		<br>
 		<%= post.content %>
+		<br>
 		<% if @current_user && @current_user.id == post.user_id  %>
-			<%= link_to 'edit Post', edit_post_path(post.id) %>
+			<button><%= link_to 'edit Post', edit_post_path(post.id) %></button>
 		<% end %>
-		<%= link_to 'Comments', post_path(id: post.id) %> 
+		<button><%= link_to 'Comments', post_path(id: post.id) %> </button>
+	</div>
 
 		<br>
 		<hr>
