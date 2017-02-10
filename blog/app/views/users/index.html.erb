@@ -1,0 +1,22 @@
+
+
+
+
+
+ <h1><%= @current_user.first_name  %>
+ <%= @current_user.last_name  %>
+ </h1>
+ <%= link_to 'edit', edit_user_path(@current_user) %>
+ <%= link_to 'Delete', user_path(@current_user.id), method: :delete %>
+ <br>
+ <%= link_to 'New Post', new_post_path %>
+ <hr>
+
+
+ <% @posts.each do |post|  %>
+	<%= post.content %>
+	<%= link_to 'edit Post', edit_post_path(post.id) %>
+	<%= link_to 'Comments', post_path(id: post.id) %> 
+	<hr>
+
+<% end %>

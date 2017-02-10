@@ -1,0 +1,23 @@
+
+
+
+
+<h1><%= @user.first_name %>
+<%= @user.last_name %></h1>
+<% if @user != @current_user && !@current_user.friends.ids.include?(@user.id) %>
+	<%= link_to 'Add To Friends List', friendships_path(id: @user.id), method: :post %>
+<% end %>
+<hr>
+<% @posts.each do |post|  %>
+	<%= post.content  %>
+	<%= link_to 'Comments', post_path(id: post.id) %> 
+	<hr>
+
+<% end %>
+  
+
+
+  @user.friends.where()
+
+
+  ruby check for value in array  

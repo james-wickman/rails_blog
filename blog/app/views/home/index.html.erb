@@ -1,0 +1,21 @@
+<h1>Home</h1>
+
+<% if @posts %>
+	<% @posts.each do |post|  %>
+		<% if @current_user %>
+			<%= link_to post.user.first_name + " " + post.user.last_name, post.user%>
+		<% else %>
+			<%= link_to post.user.first_name + " " + post.user.last_name, sessions_new_path%>
+		<% end %>
+		<br>
+		<%= post.content %>
+		<% if @current_user && @current_user.id == post.user_id  %>
+			<%= link_to 'edit Post', edit_post_path(post.id) %>
+		<% end %>
+		<%= link_to 'Comments', post_path(id: post.id) %> 
+
+		<br>
+		<hr>
+
+	<% end %>
+<% end %> 

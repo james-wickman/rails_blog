@@ -1,0 +1,16 @@
+<h1>Edit</h1>
+
+
+
+<%= form_for @current_user do |f|   %>
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name, autofocus: true  %>
+	<%= f.label :last_name  %>
+	<%= f.text_field :last_name  %>
+	<%= f.label :email  %>
+	<%= f.email_field :email %>
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	<%= f.submit %>
+
+<% end %>
