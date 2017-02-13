@@ -2,7 +2,6 @@
 <% @posts.each do |post|    %>
 	<% @friends.each do |friend| %>
 		<%if post.user.id == friend.friend_id %>
-
 			<button><%= link_to post.user.first_name + " " + post.user.last_name, post.user%> </button>
 			<br>
 			<%= post.content %>
