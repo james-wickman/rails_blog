@@ -1,8 +1,3 @@
-
-
-
-
-
  <h1><%= @current_user.first_name  %>
  <div>
 	 <%= @current_user.last_name  %>
@@ -12,8 +7,6 @@
 	 <button><%= link_to 'New Post', new_post_path %></button>
 </div>
 <hr>
-
-
 <% @posts.each do |post|  %>
  	<hr>
 	<%= post.content %>

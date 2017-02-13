@@ -1,7 +1,4 @@
 <h1>Login</h1>
-
-
-
 <%= form_for @user, url: {action: 'create' }  do |f| %>
 	<%= f.label :email %>
 	<%= f.email_field :email %>
@@ -9,7 +6,5 @@
 	<%= f.password_field :password %>
 	<%= f.submit "Log In" %>
 <% end  %>
-
 <br>
-
 <button><%= link_to 'New User', new_user_path %></button>

@@ -1,7 +1,4 @@
 <h1>Friends Posts</h1>
- 
-
-
 <% @posts.each do |post|    %>
 	<% @friends.each do |friend| %>
 		<%if post.user.id == friend.friend_id %>

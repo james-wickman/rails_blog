@@ -1,8 +1,4 @@
 <h1>New Comment</h1>
-
-
-
-
 <%= form_for @comment do |f|   %>
 	<%= f.hidden_field :user_id, value: @post.user_id %>
 	<%= f.hidden_field :post_id, value: @post.id  %>

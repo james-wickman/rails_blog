@@ -3,11 +3,9 @@ class UsersController < ApplicationController
     @current_user = current_user
     @posts = Post.where(user_id: @current_user.id ).reverse
   end 
-
   def new
     @user = User.new 
   end
-
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -15,20 +13,16 @@ class UsersController < ApplicationController
       redirect_to users_path 
     else  
       render 'new'
-    end
+    end 
   end
-
   def show
     @user = User.find(params[:id])
     @current_user = current_user
-    @posts = Post.where(user_id: @user.id)
-    
+    @posts = Post.where(user_id: @user.id) 
   end
-
   def edit
     @current_user = current_user 
   end
-
   def update
     @current_user = current_user
     if @current_user.update_attributes(params[:user])
@@ -37,7 +31,6 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-
   def destroy
     @current_user = current_user
     if @current_user.destroy

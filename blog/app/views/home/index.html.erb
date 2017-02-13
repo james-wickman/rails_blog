@@ -1,5 +1,4 @@
 <h1>Home</h1>
-
 <% if @posts %>
 	<% @posts.each do |post|  %>
 		<div>
@@ -17,9 +16,7 @@
 		<% end %>
 		<button><%= link_to 'Comments', post_path(id: post.id) %> </button>
 	</div>
-
 		<br>
 		<hr>
-
 	<% end %>
 <% end %> 
